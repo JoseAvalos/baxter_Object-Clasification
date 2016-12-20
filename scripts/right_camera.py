@@ -11,27 +11,43 @@ from geometry_msgs.msg import Point
 from cv_bridge import CvBridge, CvBridgeError
 
 '''
+#yellow
+        low_h  = 10
+        high_h = 50
+        low_s  = 85
+        high_s = 175
+        low_v  = 70
+        high_v = 255
+
+#red
+        low_h  = 0
+        high_h = 9
+        low_s  = 50
+        high_s = 255
+        low_v  = 50
+        high_v = 255
 #green
-g_low_h  = 60
-g_high_h = 90
-g_low_s  = 85
-g_high_s = 175
-g_low_v  = 70
-g_high_v = 255
+        low_h  = 50
+        high_h = 90
+        low_s  = 74
+        high_s = 147
+        low_v  = 160
+        high_v = 255
+
 #white
-w_low_h=0
-w_high_h=0
-w_low_s=0
-w_high_s=0
-w_low_v=0
-w_high_v=255
-#blue
-b_low_h  = 105
-b_high_h = 115
-b_low_s  = 135
-b_high_s = 160
-b_low_v  = 20
-b_high_v = 60
+        w_low_h=0
+        w_high_h=0
+        w_low_s=0
+        w_high_s=0
+        w_low_v=0
+        w_high_v=255
+#blue no black
+        b_low_h  = 105
+        b_high_h = 115
+        b_low_s  = 135
+        b_high_s = 160
+        b_low_v  = 20
+        b_high_v = 60
 '''
 
 # global obj_found
@@ -68,11 +84,11 @@ def callback(message):
     rate = rospy.Rate(1000) # 10hz
     #Green colored objects
     if obj_color == 0: 
-        low_h  = 0
-        high_h = 9
-        low_s  = 50
-        high_s = 255
-        low_v  = 50
+        low_h  = 10
+        high_h = 50
+        low_s  = 85
+        high_s = 175
+        low_v  = 70
         high_v = 255
 
         thresholded = cv2.inRange(hsv, np.array([low_h, low_s, low_v]), np.array([high_h, high_s, high_v]))
@@ -85,7 +101,7 @@ def callback(message):
 
         ret,thresh = cv2.threshold(thresholded,147,255,0)
 
-        xyz2,contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_NONE)
+        contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_NONE)
         
         cv2.drawContours(cv_image, contours, -1, (0,255,0), 3)
 
@@ -102,7 +118,7 @@ def callback(message):
                 cy = int(moms['m01']/moms['m00'])
 
                 xb = -(cy - (height/2))*.0024*.429 + .59 -0.015
-                yb = -(cx - (width/2))*.0024*.429 - .40  + 0.029
+                yb = -(cx - (width/2))*.0024*.429 - .40  + 0.025
 
 
 
@@ -117,7 +133,7 @@ def callback(message):
             #print "Found blue ", numobj,  "object(s)" 
             obj_found = True
     else:
-        print "Couldn't find any green or blue objects."
+    	print ("Couldn't find any green or blue objects.")
      
     cv2.imshow("Original", cv_image)
     cv2.imshow("Thresholded", thresholded)
@@ -128,8 +144,10 @@ def main():
     #Initiate left hand camera object detection node
     rospy.init_node('right_camera')
     #Create names for OpenCV images and orient them appropriately
-    cv2.namedWindow("Original", 1)
-    cv2.namedWindow("Thresholded", 2)
+    cv2.namedWindow("Original", cv2.WINDOW_NORMAL)
+    cv2.resizeWindow("Original", 1200,800)
+    cv2.namedWindow("Thresholded", cv2.WINDOW_NORMAL)
+    cv2.resizeWindow("Thresholded", 1200,800)
     rospy.Subscriber("cameras/right_hand_camera/image", Image, callback)
     rospy.spin()
 

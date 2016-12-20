@@ -304,8 +304,8 @@ int main(int argc, char **argv)
 
     while(ros::ok())
     {
-        double x_b=0.81;
-        double y_b=-0.15;
+        double x_b=0.78;
+        double y_b=-0.14;
         double z_b=0.43;
         
         std::cout<<"Right_Point_recibed_x:"<<right_position_baxter.getData()->x<<std::endl;
@@ -320,7 +320,7 @@ int main(int argc, char **argv)
             P_right_wrist[0]=x_b;//position_baxter.getData()->x;
             P_right_wrist[1]=y_b;//position_baxter.getData()->y;
             P_right_wrist[2]=z_b;//position_baxter.getData()->z;
-             P_right_wrist[3]=1.05;//1.57;reglg
+             P_right_wrist[3]=1.20;//1.57;reglg
             P_right_wrist[4]=0;
             P_right_wrist[5]=-1.57;//-1.57;De arriba a abajo   
             }

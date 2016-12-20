@@ -69,10 +69,10 @@ def callback(message):
     #Green colored objects
     if obj_color == 0: 
         low_h  = 0
-        high_h = 8
-        low_s  = 50
+        high_h = 6
+        low_s  = 48
         high_s = 255
-        low_v  = 50
+        low_v  = 48
         high_v = 255
 
         thresholded = cv2.inRange(hsv, np.array([low_h, low_s, low_v]), np.array([high_h, high_s, high_v]))
@@ -100,7 +100,7 @@ def callback(message):
                 cx = int(moms['m10']/moms['m00'])
                 cy = int(moms['m01']/moms['m00'])
 
-                xb = -(cy - (height/2))*.0025*.428 + .578  
+                xb = -(cy - (height/2))*.0025*.428 + .59  
                 yb = -(cx - (width/2))*.0025*.428 + .40  +0.06
 
                 msg.x=xb

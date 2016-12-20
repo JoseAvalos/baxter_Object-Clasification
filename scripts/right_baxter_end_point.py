@@ -148,7 +148,7 @@ def go_position(k,z):
             if wait%1000==0:
                 print(wait)
  
-    wait=k
+    wait=k*1.5
     print("descenso...")
     
     envio_near.x=x_send
@@ -195,30 +195,31 @@ def go_box(k):
     while(wait>0):
         pub_box.publish(envio_box) 
         position_near=value_3.get_msg()
-        if  position_near.pose.position.y>-0.14:
-            wait=wait-1
+        if  position_near.pose.position.y>-0.19 and \
+            position_near.pose.position.z>0.025:
+            wait=wait-2
             if wait%1000==0:
                 print(wait)
     print "Robot on box"
     
 def main():
-
+    factor=9
     print("Right Init node")
     rospy.init_node("Right_Ik_service_client", anonymous=True)
-    rate= rospy.Rate(10)
+    rate= rospy.Rate(1000)
 
     right_gripper=Gripper('right')
     right_gripper.calibrate()
     right_gripper.open()
     while not rospy.is_shutdown():
             
-        initial_position(6000)#10ms
-        go_position(7000,0.25)
-        for x in range (0,1000):
+        initial_position(round(6000*factor))#10ms
+        go_position(round(10000*factor),0.25)
+        for x in range (0,int(round(2000*factor))):
             right_gripper.close()
             #initial_position(10000)#3ms
-        go_box(250)
-        for x in range (0,800):
+        go_box(round(250*factor))
+        for x in range (0,int(round(800*factor))):
             right_gripper.open()
         print "Objecto dejado"
 
