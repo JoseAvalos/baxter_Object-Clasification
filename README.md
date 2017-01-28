@@ -1,8 +1,9 @@
-The steps to reproduce this project will be explain. The project is develop for Ubuntu 14.04 using ROS. The workspace is explain in previous git.  
-
-
+The steps to reproduce this project will be explain. The Baxter robot have 2 gripper to move object, also, one camera in each arm thay let us  The project is develop for Ubuntu 14.04 using ROS. 
 ##0-Dependence
-##1-Robot Conection
+It necessary to get the workspace. In http://sdk.rethinkrobotics.com/wiki/Workstation_Setup are the step to get it. 
+
+##
+##2-Robot Conection
 
 
 Before to execute avahi is recommedable eneable networking in the computer.
