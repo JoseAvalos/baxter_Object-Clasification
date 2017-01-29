@@ -1,8 +1,17 @@
-The steps to reproduce this project will be explain. The Baxter robot have 2 gripper to move object, also, one camera in each arm thay let us  The project is develop for Ubuntu 14.04 using ROS. 
-##0-Dependence
-It necessary to get the workspace. In http://sdk.rethinkrobotics.com/wiki/Workstation_Setup are the step to get it. 
+The steps to reproduce this project will be explain. The Baxter robot has two gripper, also, one camera in each arm thay let us manipulation of some objects. In this work, we are working to develop the object clasification using open CV and inverse kinematic. The project is develop for Ubuntu 14.04 using ROS. 
 
-##
+##0-Dependence
+###Workspace
+It necessary to get the defult workspace for the Baxter. In http://sdk.rethinkrobotics.com/wiki/Workstation_Setup are the step to get it. 
+
+###Ros Packages
+This git contain the files neccesary to work as another packages. You could edit the "CMakeLists.txt" file to modify the name of the project. After that you could compile the whole workspace.
+```
+roscd 
+cd ..
+catkin_make
+```
+
 ##2-Robot Conection
 
 
