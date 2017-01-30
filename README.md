@@ -1,5 +1,9 @@
 The steps to reproduce this project will be explain. The Baxter robot has two gripper, also, one camera in each arm thay let us manipulation of some objects. In this work, we are working to develop the object clasification using open CV and inverse kinematic. The project is develop for Ubuntu 14.04 using ROS. 
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=F1JtMYiW_R0
+" target="_blank"><img src="http://img.youtube.com/vi/F1JtMYiW_R0/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="480" height="360"  align="center" border="10" /></a>
+
 ##0-Dependence
 ###Workspace
 It necessary to get the defult workspace for the Baxter. In http://sdk.rethinkrobotics.com/wiki/Workstation_Setup are the step to get it. 
