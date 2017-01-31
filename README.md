@@ -1,3 +1,4 @@
+# Baxter Object Classfication
 The steps to reproduce this project will be explain. The Baxter robot has two gripper, also, one camera in each arm thay let us manipulation of some objects. In this work, we are working to develop the object clasification using open CV and inverse kinematic. The project is develop for Ubuntu 14.04 using ROS. 
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=F1JtMYiW_R0
