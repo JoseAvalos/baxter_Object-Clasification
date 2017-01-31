@@ -98,11 +98,11 @@ SET(ALL_LIBRARIES
 #  ${catkin_LIBRARIES}
 #)
 
-add_executable(OSIK_baxter envio_baxter.cpp)
-TARGET_LINK_LIBRARIES( OSIK_baxter
-${ALL_LIBRARIES}
-${CMAKE_THREAD_LIBS_INIT}
-)
+#add_executable(OSIK_baxter envio_baxter.cpp)
+#TARGET_LINK_LIBRARIES( OSIK_baxter
+#${ALL_LIBRARIES}
+#${CMAKE_THREAD_LIBS_INIT}
+#)
 
 
 #add_executable(xtion_OSIK_baxter baxter_xtion.cpp)
