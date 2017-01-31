@@ -12,7 +12,7 @@ In source_lib directory there is a osik-full.zip file. You must decompress it. A
 ```
 cd ext
 ./install-ext   ~/devel/install -a
-cd ...
+cd ..
 mkdir build
 cd build
 cmake ..
