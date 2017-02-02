@@ -35,9 +35,6 @@ Before to execute avahi is recommedable eneable networking in the computer.
 roscore
 ```
 
-
-
-
 ```
 sud avadi-autoipd eth0
 ```
@@ -59,20 +56,20 @@ You will se the direcction in the terminal. It means that you could interact wit
 ##3.-Image Processing
 The camera will detect a determinate color. This value could be edit in the script directory. We have to open a terminal with ./baxter.sh before to execue:
 ```
-rosrun baxter_cpp left_camera.py
+rosrun baxter_obj_classification left_camera.py
 ```
 ```
-rosrun baxter_cpp right_camera.py
+rosrun baxter_obj_classification right_camera.py
 ```
 
 ##4.-Reproduce
 Finally, We could reproduce the real motion in the baxter. We have the option of work with one or two hands.
 
 ```
-rosrun baxter_cpp left_OSIK_baxter
+rosrun baxter_obj_classification left_OSIK_baxter
 ```
 
 ```
-rosrun baxter_cpp right_OSIK_baxter
+rosrun baxter_obj_classification right_OSIK_baxter
 ```
 

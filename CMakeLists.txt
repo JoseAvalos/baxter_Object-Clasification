@@ -53,13 +53,13 @@ LINK_DIRECTORIES(
   ${QPOASES_LIBRARY_DIRS}
 )
 
-ADD_LIBRARY(baxter_cpp SHARED
+ADD_LIBRARY(baxter_obj_classification SHARED
   src/markers.cpp
   src/tools.cpp
   )
 
 SET(ALL_LIBRARIES
-  baxter_cpp
+  baxter_obj_classification
   ${catkin_LIBRARIES}
   ${RBDL_LIBRARIES}
   ${RBDL_URDFReader_LIBRARIES}

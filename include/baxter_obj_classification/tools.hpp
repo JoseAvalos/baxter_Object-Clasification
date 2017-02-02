@@ -3,7 +3,7 @@
 
 
 #include <sensor_msgs/JointState.h>
-#include <baxter_cpp/robotSpecifics.h>
+#include <baxter_obj_classification/robotSpecifics.h>
 #include <Eigen/Dense>
 // #include <osik-control/tools.h>
 

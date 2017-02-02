@@ -9,8 +9,8 @@
 #include <osik-control/kine-task.hpp>
 #include <osik-control/kine-task-pose.hpp>
 #include <osik-control/kine-solver-WQP.hpp>
-#include <baxter_cpp/robotSpecifics.h>
-#include <baxter_cpp/tools.hpp>
+#include <baxter_obj_classification/robotSpecifics.h>
+#include <baxter_obj_classification/tools.hpp>
 #include <baxter_core_msgs/JointCommand.h>
 #include <baxter_core_msgs/EndpointState.h>
 #include <math.h>
@@ -18,7 +18,7 @@
 #include <cmath>
 #include <Eigen/Dense>
 #include <visualization_msgs/Marker.h>
-#include <baxter_cpp/markers.hpp>
+#include <baxter_obj_classification/markers.hpp>
 #include <tf/transform_datatypes.h>
 #include <fstream>
 #include <unistd.h>
